@@ -1,12 +1,14 @@
 const movies = require("../models/movies.json");
-
-// criar funções que controlam as informações, recebendo as requisições e enviando as respostas
-
 // visualizar todos os filmes
 
-// consumir lista de filmes de api terceira utilizando fetch
+const getAll = (request, response) => {
+    response.status(200).send(movies);
 
-
-module.exports = {
-    home
+    // if(!movies){
+    //     response.status(404).send({
+    //         "message": "não foi possível acessar a lista de filmes"
+    //     })
+    // }
 };
+
+module.exports = {getAll};
